@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories);$(SolutionDir)\imgui\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories);$(SolutionDir)\imgui\;$(ProjectDir)Header Files\;$(ProjectDir)Header Files\UI Elements;$(ProjectDir)Header Files\System;$(ProjectDir)Header Files\Windows;$(ProjectDir)Header Files\General;$(ProjectDir)Header Files\Formats</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Assets\Fonts;$(ProjectDir)include;%(AdditionalIncludeDirectories);$(SolutionDir)\imgui\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Assets\Fonts;$(ProjectDir)include;%(AdditionalIncludeDirectories);$(SolutionDir)\imgui\;$(ProjectDir)Header Files\;$(ProjectDir)Header Files\UI Elements;$(ProjectDir)Header Files\System;$(ProjectDir)Header Files\Windows;$(ProjectDir)Header Files\General;$(ProjectDir)Header Files\Formats</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories);$(SolutionDir)\imgui\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories);$(SolutionDir)\imgui\;$(ProjectDir)Header Files\;$(ProjectDir)Header Files\UI Elements;$(ProjectDir)Header Files\System;$(ProjectDir)Header Files\Windows;$(ProjectDir)Header Files\General;$(ProjectDir)Header Files\Formats</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,7 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Assets\Fonts;$(ProjectDir)include;%(AdditionalIncludeDirectories);$(SolutionDir)\imgui\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Assets\Fonts;$(ProjectDir)include;%(AdditionalIncludeDirectories);$(SolutionDir)\imgui\;$(ProjectDir)Header Files\;$(ProjectDir)Header Files\UI Elements;$(ProjectDir)Header Files\System;$(ProjectDir)Header Files\Windows;$(ProjectDir)Header Files\General;$(ProjectDir)Header Files\Formats</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,33 +139,44 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Button.cpp" />
-    <ClCompile Include="FileErrorHandler.cpp" />
-    <ClCompile Include="FileHandler.cpp" />
-    <ClCompile Include="FileWindow.cpp" />
-    <ClCompile Include="GradientRectangle.cpp" />
     <ClCompile Include="imgui\imgui-SFML.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
     <ClCompile Include="imgui\imgui_tables.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
-    <ClCompile Include="Interactable.cpp" />
-    <ClCompile Include="Line.cpp" />
-    <ClCompile Include="Picture.cpp" />
-    <ClCompile Include="RCRD_Format.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="SystemStyle.cpp" />
-    <ClCompile Include="SystemStyle.hpp" />
-    <ClCompile Include="Textbox.cpp" />
+    <ClCompile Include="Source Files\Button.cpp" />
+    <ClCompile Include="Source Files\FileErrorHandler.cpp" />
+    <ClCompile Include="Source Files\FileHandler.cpp" />
+    <ClCompile Include="Source Files\FileWindow.cpp" />
+    <ClCompile Include="Source Files\GradientRectangle.cpp" />
+    <ClCompile Include="Source Files\Interactable.cpp" />
+    <ClCompile Include="Source Files\Line.cpp" />
+    <ClCompile Include="Source Files\Picture.cpp" />
+    <ClCompile Include="Source Files\RCRD_Format.cpp" />
+    <ClCompile Include="Source Files\Source.cpp" />
+    <ClCompile Include="Source Files\SystemStyle.cpp" />
+    <ClCompile Include="Source Files\Textbox.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Button.hpp" />
-    <ClInclude Include="CustomShapes.hpp" />
-    <ClInclude Include="dirent.h" />
-    <ClInclude Include="FileErrorHandler.hpp" />
-    <ClInclude Include="FileHandler.hpp" />
-    <ClInclude Include="FileWindow.hpp" />
-    <ClInclude Include="GradientRectangle.hpp" />
+    <ClInclude Include="Header Files\Formats\RCRD_Format.hpp" />
+    <ClInclude Include="Header Files\General\dirent.h" />
+    <ClInclude Include="Header Files\General\FileErrorHandler.hpp" />
+    <ClInclude Include="Header Files\General\FileHandler.hpp" />
+    <ClInclude Include="Header Files\General\Interactable.hpp" />
+    <ClInclude Include="Header Files\General\TextHelp.hpp" />
+    <ClInclude Include="Header Files\System\RCxSystem.hpp" />
+    <ClInclude Include="Header Files\System\SystemError.hpp" />
+    <ClInclude Include="Header Files\System\SystemEvents.hpp" />
+    <ClInclude Include="Header Files\System\SystemStyle.hpp" />
+    <ClInclude Include="Header Files\UI Elements\Button.hpp" />
+    <ClInclude Include="Header Files\UI Elements\CustomShapes.hpp" />
+    <ClInclude Include="Header Files\UI Elements\GradientRectangle.hpp" />
+    <ClInclude Include="Header Files\UI Elements\Line.hpp" />
+    <ClInclude Include="Header Files\UI Elements\Picture.hpp" />
+    <ClInclude Include="Header Files\UI Elements\RCxUI.hpp" />
+    <ClInclude Include="Header Files\UI Elements\Textbox.hpp" />
+    <ClInclude Include="Header Files\Windows\FileWindow.hpp" />
+    <ClInclude Include="Header Files\Windows\WindowBase.hpp" />
     <ClInclude Include="imgui\imconfig-SFML.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui-SFML.h" />
@@ -175,17 +186,115 @@
     <ClInclude Include="imgui\imstb_rectpack.h" />
     <ClInclude Include="imgui\imstb_textedit.h" />
     <ClInclude Include="imgui\imstb_truetype.h" />
-    <ClInclude Include="Interactable.hpp" />
-    <ClInclude Include="Line.hpp" />
-    <ClInclude Include="Picture.hpp" />
-    <ClInclude Include="RCRD_Format.hpp" />
-    <ClInclude Include="RCxSystem.hpp" />
-    <ClInclude Include="RCxUI.hpp" />
-    <ClInclude Include="SystemError.hpp" />
-    <ClInclude Include="SystemEvents.hpp" />
-    <ClInclude Include="Textbox.hpp" />
-    <ClInclude Include="TextHelp.hpp" />
-    <ClInclude Include="WindowBase.hpp" />
+    <ClInclude Include="include\SFML\Audio.hpp" />
+    <ClInclude Include="include\SFML\Audio\AlResource.hpp" />
+    <ClInclude Include="include\SFML\Audio\Export.hpp" />
+    <ClInclude Include="include\SFML\Audio\InputSoundFile.hpp" />
+    <ClInclude Include="include\SFML\Audio\Listener.hpp" />
+    <ClInclude Include="include\SFML\Audio\Music.hpp" />
+    <ClInclude Include="include\SFML\Audio\OutputSoundFile.hpp" />
+    <ClInclude Include="include\SFML\Audio\Sound.hpp" />
+    <ClInclude Include="include\SFML\Audio\SoundBuffer.hpp" />
+    <ClInclude Include="include\SFML\Audio\SoundBufferRecorder.hpp" />
+    <ClInclude Include="include\SFML\Audio\SoundFileFactory.hpp" />
+    <ClInclude Include="include\SFML\Audio\SoundFileReader.hpp" />
+    <ClInclude Include="include\SFML\Audio\SoundFileWriter.hpp" />
+    <ClInclude Include="include\SFML\Audio\SoundRecorder.hpp" />
+    <ClInclude Include="include\SFML\Audio\SoundSource.hpp" />
+    <ClInclude Include="include\SFML\Audio\SoundStream.hpp" />
+    <ClInclude Include="include\SFML\Config.hpp" />
+    <ClInclude Include="include\SFML\GpuPreference.hpp" />
+    <ClInclude Include="include\SFML\Graphics.hpp" />
+    <ClInclude Include="include\SFML\Graphics\BlendMode.hpp" />
+    <ClInclude Include="include\SFML\Graphics\CircleShape.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Color.hpp" />
+    <ClInclude Include="include\SFML\Graphics\ConvexShape.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Drawable.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Export.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Font.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Glsl.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Glyph.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Image.hpp" />
+    <ClInclude Include="include\SFML\Graphics\PrimitiveType.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Rect.hpp" />
+    <ClInclude Include="include\SFML\Graphics\RectangleShape.hpp" />
+    <ClInclude Include="include\SFML\Graphics\RenderStates.hpp" />
+    <ClInclude Include="include\SFML\Graphics\RenderTarget.hpp" />
+    <ClInclude Include="include\SFML\Graphics\RenderTexture.hpp" />
+    <ClInclude Include="include\SFML\Graphics\RenderWindow.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Shader.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Shape.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Sprite.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Text.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Texture.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Transform.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Transformable.hpp" />
+    <ClInclude Include="include\SFML\Graphics\Vertex.hpp" />
+    <ClInclude Include="include\SFML\Graphics\VertexArray.hpp" />
+    <ClInclude Include="include\SFML\Graphics\VertexBuffer.hpp" />
+    <ClInclude Include="include\SFML\Graphics\View.hpp" />
+    <ClInclude Include="include\SFML\Main.hpp" />
+    <ClInclude Include="include\SFML\Network.hpp" />
+    <ClInclude Include="include\SFML\Network\Export.hpp" />
+    <ClInclude Include="include\SFML\Network\Ftp.hpp" />
+    <ClInclude Include="include\SFML\Network\Http.hpp" />
+    <ClInclude Include="include\SFML\Network\IpAddress.hpp" />
+    <ClInclude Include="include\SFML\Network\Packet.hpp" />
+    <ClInclude Include="include\SFML\Network\Socket.hpp" />
+    <ClInclude Include="include\SFML\Network\SocketHandle.hpp" />
+    <ClInclude Include="include\SFML\Network\SocketSelector.hpp" />
+    <ClInclude Include="include\SFML\Network\TcpListener.hpp" />
+    <ClInclude Include="include\SFML\Network\TcpSocket.hpp" />
+    <ClInclude Include="include\SFML\Network\UdpSocket.hpp" />
+    <ClInclude Include="include\SFML\OpenGL.hpp" />
+    <ClInclude Include="include\SFML\System.hpp" />
+    <ClInclude Include="include\SFML\System\Clock.hpp" />
+    <ClInclude Include="include\SFML\System\Err.hpp" />
+    <ClInclude Include="include\SFML\System\Export.hpp" />
+    <ClInclude Include="include\SFML\System\FileInputStream.hpp" />
+    <ClInclude Include="include\SFML\System\InputStream.hpp" />
+    <ClInclude Include="include\SFML\System\Lock.hpp" />
+    <ClInclude Include="include\SFML\System\MemoryInputStream.hpp" />
+    <ClInclude Include="include\SFML\System\Mutex.hpp" />
+    <ClInclude Include="include\SFML\System\NativeActivity.hpp" />
+    <ClInclude Include="include\SFML\System\NonCopyable.hpp" />
+    <ClInclude Include="include\SFML\System\Sleep.hpp" />
+    <ClInclude Include="include\SFML\System\String.hpp" />
+    <ClInclude Include="include\SFML\System\Thread.hpp" />
+    <ClInclude Include="include\SFML\System\ThreadLocal.hpp" />
+    <ClInclude Include="include\SFML\System\ThreadLocalPtr.hpp" />
+    <ClInclude Include="include\SFML\System\Time.hpp" />
+    <ClInclude Include="include\SFML\System\Utf.hpp" />
+    <ClInclude Include="include\SFML\System\Vector2.hpp" />
+    <ClInclude Include="include\SFML\System\Vector3.hpp" />
+    <ClInclude Include="include\SFML\Window.hpp" />
+    <ClInclude Include="include\SFML\Window\Clipboard.hpp" />
+    <ClInclude Include="include\SFML\Window\Context.hpp" />
+    <ClInclude Include="include\SFML\Window\ContextSettings.hpp" />
+    <ClInclude Include="include\SFML\Window\Cursor.hpp" />
+    <ClInclude Include="include\SFML\Window\Event.hpp" />
+    <ClInclude Include="include\SFML\Window\Export.hpp" />
+    <ClInclude Include="include\SFML\Window\GlResource.hpp" />
+    <ClInclude Include="include\SFML\Window\Joystick.hpp" />
+    <ClInclude Include="include\SFML\Window\Keyboard.hpp" />
+    <ClInclude Include="include\SFML\Window\Mouse.hpp" />
+    <ClInclude Include="include\SFML\Window\Sensor.hpp" />
+    <ClInclude Include="include\SFML\Window\Touch.hpp" />
+    <ClInclude Include="include\SFML\Window\VideoMode.hpp" />
+    <ClInclude Include="include\SFML\Window\Window.hpp" />
+    <ClInclude Include="include\SFML\Window\WindowHandle.hpp" />
+    <ClInclude Include="include\SFML\Window\WindowStyle.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\SFML\Audio\SoundFileFactory.inl" />
+    <None Include="include\SFML\Graphics\Glsl.inl" />
+    <None Include="include\SFML\Graphics\Rect.inl" />
+    <None Include="include\SFML\System\String.inl" />
+    <None Include="include\SFML\System\Thread.inl" />
+    <None Include="include\SFML\System\ThreadLocalPtr.inl" />
+    <None Include="include\SFML\System\Utf.inl" />
+    <None Include="include\SFML\System\Vector2.inl" />
+    <None Include="include\SFML\System\Vector3.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
