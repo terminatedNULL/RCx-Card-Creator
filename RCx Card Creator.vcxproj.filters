@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Windows">
+      <UniqueIdentifier>{b0ce8ce8-3ce4-404b-bd1d-cbbbc242a10b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI Elements">
+      <UniqueIdentifier>{00f12e73-8975-4f65-93bd-fd8dc9566238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System">
+      <UniqueIdentifier>{eded8e2c-e48c-486c-a9e2-b552c9fb09dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI Elements\src">
+      <UniqueIdentifier>{22ea751e-a58b-4f44-8ce4-9d1124e95915}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Windows\src">
+      <UniqueIdentifier>{14ded314-71ea-47bd-8f7f-3b432e5aee03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Formats">
+      <UniqueIdentifier>{0ca066bf-5de1-4a3b-8c65-f40eb100e03c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Formats\src">
+      <UniqueIdentifier>{3c057dd5-a441-4710-80c7-d1485addc5f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\General">
+      <UniqueIdentifier>{4013b322-ce26-4dac-833f-a967a33ae84c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\General\src">
+      <UniqueIdentifier>{1e3cf8fc-f2ba-4760-9a97-81578535e523}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\imgui">
+      <UniqueIdentifier>{2d9f1a47-3f17-4577-81bf-806272a281d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\src">
+      <UniqueIdentifier>{10948af5-c54a-40a9-9d45-3331e482f5f1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemStyle.hpp">
+      <Filter>Header Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Header Files\UI Elements\src</Filter>
+    </ClCompile>
+    <ClCompile Include="GradientRectangle.cpp">
+      <Filter>Header Files\UI Elements\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Header Files\UI Elements\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Picture.cpp">
+      <Filter>Header Files\UI Elements\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Textbox.cpp">
+      <Filter>Header Files\UI Elements\src</Filter>
+    </ClCompile>
+    <ClCompile Include="RCRD_Format.cpp">
+      <Filter>Header Files\Formats\src</Filter>
+    </ClCompile>
+    <ClCompile Include="FileHandler.cpp">
+      <Filter>Header Files\General\src</Filter>
+    </ClCompile>
+    <ClCompile Include="FileErrorHandler.cpp">
+      <Filter>Header Files\General\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Interactable.cpp">
+      <Filter>Header Files\General\src</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui-SFML.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemStyle.cpp">
+      <Filter>Header Files\System\src</Filter>
+    </ClCompile>
+    <ClCompile Include="FileWindow.cpp">
+      <Filter>Header Files\Windows\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Button.hpp">
+      <Filter>Header Files\UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomShapes.hpp">
+      <Filter>Header Files\UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="GradientRectangle.hpp">
+      <Filter>Header Files\UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.hpp">
+      <Filter>Header Files\UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Picture.hpp">
+      <Filter>Header Files\UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Textbox.hpp">
+      <Filter>Header Files\UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowBase.hpp">
+      <Filter>Header Files\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="RCxUI.hpp">
+      <Filter>Header Files\UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemError.hpp">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemEvents.hpp">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="RCxSystem.hpp">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="RCRD_Format.hpp">
+      <Filter>Header Files\Formats</Filter>
+    </ClInclude>
+    <ClInclude Include="dirent.h">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="FileHandler.hpp">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Interactable.hpp">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="TextHelp.hpp">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="FileErrorHandler.hpp">
+      <Filter>Header Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig-SFML.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui-SFML.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui-SFML_export.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="FileWindow.hpp">
+      <Filter>Header Files\Windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

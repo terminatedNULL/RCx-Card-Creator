@@ -1,0 +1,63 @@
+#ifndef FILE_WINDOW_OLD_HPP
+#define FILE_WINDOW_OLD_HPP
+
+#include <string>
+#include <vector>
+
+#include "RCxUI.hpp"
+#include "FileHandler.hpp"
+#include "WindowBase.hpp"
+#include "SystemStyle.hpp"
+
+typedef std::vector<std::vector<Button*>> PageVector;
+
+
+class FileWindow : public WindowBase {
+public:
+	void SetFilter(std::string filter);
+	void SetOutput(std::string* output);
+	void SetOutput(std::vector<std::string>* output);
+
+	void HandleEvents(sf::Event& event, sf::RenderWindow& wind);
+	void Draw(sf::RenderWindow& wind);
+	
+	std::string GetFileDir();
+	std::string GetFolderDir();
+	std::vector<std::string> GetAllFileDir();
+
+private:
+	FileW::OpenMode m_mode;
+	std::string* m_outputDir;
+	std::vector<std::string>* m_outputDirVec;
+	SystemStyleHandler m_style;
+
+	//Window UI Variables
+	//bool m_active = false;
+	//int m_screenWidth, m_screenHeight;
+	//bool m_fileList = false, m_noFiles = false;
+	//bool m_fileSelected = false;
+	//bool m_pageButtons[2] = { false, false };
+	//std::string m_extFilter = ".";
+	//int m_currentPage = 0;
+	PageVector m_fileWindPages;
+	std::vector<Button*> m_selectedFiles = { nullptr };
+
+	std::string* m_output;
+	std::vector<std::string>* m_outputM;
+
+	//Window UI Elements
+	Textbox*  m_directoryBox;
+	Button*   m_submitDirButton;
+	Button*   m_fileWindClose;
+	Button*   m_nextPageButton;
+	Button*   m_prevPageButton;
+	sf::Text* m_noFilesFound;
+	Button*   m_selectFilesButton;
+
+	void setupUI();
+	bool listDirFiles(std::string dir, std::string filter, PageVector& refButtons);
+	std::vector<Button*> generateFileWindButtons(int num);
+	void loadFileToUI(std::string path);
+};
+
+#endif
