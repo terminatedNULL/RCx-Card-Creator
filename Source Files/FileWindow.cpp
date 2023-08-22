@@ -34,6 +34,8 @@ void FileWindow::Open(sf::RenderWindow& wind, std::string backPath) {
 	backgroundTex.loadFromImage(backgroundImg);
 	background.setTexture(backgroundTex);
 
+	//Fix background capturing here
+
 	while (m_active) {
 		sf::Clock deltaClock;
 		sf::Event event;
