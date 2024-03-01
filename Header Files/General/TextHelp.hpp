@@ -5,28 +5,27 @@
 #include <string>
 
 namespace TextTools {
-	inline sf::Vector2f TextSize(std::string text, sf::Font& font, int size) {
+	inline sf::Vector2f textSize(std::string text, sf::Font& font, int size) {
 		sf::Text sizeText(text, font);
 		sizeText.setCharacterSize(size);
-		return sf::Vector2f(sizeText.getGlobalBounds().width, sizeText.getGlobalBounds().height);
+		return { sizeText.getGlobalBounds().width, sizeText.getGlobalBounds().height };
 	}
 
 	/*
 	 * This whole function is stupid, and was only created because SFML cannot figure out how to correctly bound text.
 	 */
 	inline sf::Vector2f centerText(int x, int y, sf::Text text, sf::Font& font, int sizeX = 0, int sizeY = 0) {
-		std::string criteria("abcdefghijklmnopqrstuvwxyz0123456789()_-., ");
-		std::string textStr = text.getString();
+		const std::string criteria("abcdefghijklmnopqrstuvwxyz0123456789()_-., ");
+		const std::string textStr = text.getString();
 
-		if (textStr.find("p") != std::string::npos) {
-			int pSize;
-			sf::Text pText(std::string("p"), font, text.getCharacterSize());
-			pSize = pText.getGlobalBounds().height / 2;
+		if (textStr.find('p') != std::string::npos) {
+			const sf::Text pText(std::string("p"), font, text.getCharacterSize());
+			const int pSize = pText.getGlobalBounds().height / 2;
 
-			return sf::Vector2f(
+			return {
 				x - text.getGlobalBounds().width / 2 + sizeX / 2,
 				y - text.getGlobalBounds().height + sizeY / 2 + pSize
-			);
+			};
 		}
 		else {
 			/*
@@ -39,17 +38,17 @@ namespace TextTools {
 			 * make a header designed to do just that, but I really don't want to, so this will have do for the moment.
 			 */
 			if (textStr.find_first_not_of(criteria) == std::string::npos) {
-				sf::Text sizeText("A" + textStr + "A", font, text.getCharacterSize());
-				return sf::Vector2f(
+				const sf::Text sizeText("A" + textStr + "A", font, text.getCharacterSize());
+				return {
 					x - text.getGlobalBounds().width / 2 + sizeX / 2,
 					y - sizeText.getGlobalBounds().height + sizeY / 2 + 2
-				);
+				};
 			}
 
-			return sf::Vector2f(
+			return {
 				x - text.getGlobalBounds().width / 2 + sizeX / 2,
 				y - text.getGlobalBounds().height + sizeY / 2 + 2
-			);
+			};
 		}
 	}
 }

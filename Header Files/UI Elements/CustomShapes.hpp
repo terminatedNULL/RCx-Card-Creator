@@ -3,8 +3,13 @@
 
 #include <SFML/Graphics.hpp>
 
-inline sf::ConvexShape RoundedRectangle(float x, float y, float width, float height, float radius, const sf::Color& Col, float Outline = 0.f, const sf::Color& OutlineCol = sf::Color(0, 0, 0), int POINTS = 10) {
-	sf::ConvexShape rrect((double)POINTS * 4);
+inline sf::ConvexShape RoundedRectangle(
+	const float x, const float y, const float width, const float height,
+	const float radius, const sf::Color& Col,
+	const float Outline = 0.f, const sf::Color& OutlineCol = sf::Color(0, 0, 0),
+	const int POINTS = 10
+) {
+	sf::ConvexShape rrect(static_cast<double>(POINTS) * 4);
 	rrect.setOutlineThickness(Outline);
 	rrect.setFillColor(Col);
 	rrect.setOutlineColor(OutlineCol);
@@ -37,7 +42,11 @@ inline sf::ConvexShape RoundedRectangle(float x, float y, float width, float hei
 
 }
 
-inline sf::ConvexShape TriangleShape(int x, int y, int width, int height, const sf::Color& col, int outlineWidth = 0, const sf::Color& outlineCol = sf::Color::Black) {
+inline sf::ConvexShape TriangleShape(
+	const int x, const int y, const int width, const int height,
+	const sf::Color& col, const int outlineWidth = 0,
+	const sf::Color& outlineCol = sf::Color::Black
+) {
 	sf::ConvexShape triangle(3);
 
 	triangle.setPoint(0, sf::Vector2f(x, y));

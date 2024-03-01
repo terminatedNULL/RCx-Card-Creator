@@ -46,7 +46,7 @@
 		UltraItalic,
 	};
 
-	enum SysPallete {
+	enum SysPalette {
 		Background,
 		Foreground,
 		TopGradient,
@@ -82,8 +82,8 @@ public:
 
 	void InitializeFonts();
 
-	sf::Color Alpha(sf::Color col, float alpha);
-	ImVec4 ImAlpha(ImVec4 col, float alpha);
+	static sf::Color Alpha(const sf::Color col, const float alpha);
+	static ImVec4 ImAlpha(const ImVec4 col, const float alpha);
 
 	std::vector<sf::Font> Fonts;
 

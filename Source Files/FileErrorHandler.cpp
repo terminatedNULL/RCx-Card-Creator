@@ -1,11 +1,11 @@
 #include "FileErrorHandler.hpp"
 
 FileErrorHandler::FileErrorHandler() {
-	currError = new Error;
+	m_currError = new Error;
 }
 
 FileErrorHandler::~FileErrorHandler() {
-	delete currError;
+	delete m_currError;
 }
 
 Error& FileErrorHandler::CreateError(ErrorType t, ErrorLevel l, std::string msg, std::string detail) {
@@ -14,15 +14,15 @@ Error& FileErrorHandler::CreateError(ErrorType t, ErrorLevel l, std::string msg,
 }
 
 void FileErrorHandler::SetError(Error& e) { 
-	currError = &e; handleError(); 
+	m_currError = &e; handleError(); 
 }
 
-Error& FileErrorHandler::GetError() {
-	return *currError;
+Error& FileErrorHandler::GetError() const {
+	return *m_currError;
 }
 
-void FileErrorHandler::handleError() {
-	switch (currError->level) {
+void FileErrorHandler::handleError() const {
+	switch (m_currError->level) {
 	case ErrorLevel::None:
 		//System
 		break;

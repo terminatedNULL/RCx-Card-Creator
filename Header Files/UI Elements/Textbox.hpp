@@ -16,24 +16,24 @@
 
 class Textbox : public Interactable {
 public:
-	Textbox(float x, float y, int width, int height, std::string text);
+	Textbox(const float x, const float y, const int width, const int height, const std::string text);
 
-	void BackgroundBorderDetails(sf::Color bgCol, sf::Color borderCol, int borderWidth);
-	void SetColor(sf::Color col);
-	void SetCharacterSize(int cSize);
-	void SetPosition(int x, int y);
-	void SetFont(sf::Font& font);
-	void SetLimit(int lim);
-	void SetOverflow(bool state);
-	void SetSingleLine(bool state);
-	void SetSelected(bool state);
-	void SetText(std::string text);
+	void BackgroundBorderDetails(const sf::Color bgCol, const sf::Color borderCol, const int borderWidth);
+	void SetColor(const sf::Color col);
+	void SetCharacterSize(const int cSize);
+	void SetPosition(const int x, const int y);
+	void SetFont(const sf::Font& font);
+	void SetLimit(const int lim);
+	void SetOverflow(const bool state);
+	void SetSingleLine(const bool state);
+	void SetSelected(const bool state);
+	void SetText(const std::string text);
 
 	std::string GetText();
 
 	void Draw(sf::RenderWindow& wind);
-	void TypedIn(sf::Event ev);
-	void Click(sf::Event event, sf::RenderWindow& wind);
+	void TypedIn(const sf::Event ev);
+	void Click(const sf::Event event, sf::RenderWindow& wind);
 
 private:
 	sf::RectangleShape m_background;
@@ -44,10 +44,10 @@ private:
 	bool m_hasLimit = false;
 	std::pair<bool, bool> m_overflow = {true, false};
 	bool m_singleLine = true;
-	int m_limit = 0, lineNo = 0, dotPos = 0;
+	int m_limit = 0, m_lineNo = 0, m_dotPos = 0;
 	int m_charSize = 30;
 
-	void input(sf::Event::KeyEvent keyIn, bool devGoto = false);
+	void input(const sf::Event::KeyEvent keyIn, const bool devGoto = false);
 	std::string AssembleString();
 };
 

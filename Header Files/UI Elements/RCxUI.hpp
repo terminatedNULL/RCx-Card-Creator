@@ -19,21 +19,21 @@
 #include "SystemStyle.hpp"
 
 namespace RCxUI {
-    const sf::Color BACKGROUND = Colors[SysPallete::Background];
-    const sf::Color FOREGROUND = Colors[SysPallete::Foreground];
-    const sf::Color TOP_GRADIENT = Colors[SysPallete::TopGradient];
-    const sf::Color BOTTOM_GRADIENT = Colors[SysPallete::BottomGradient];
-    const sf::Color PRIMARY_TEXT = Colors[SysPallete::PrimaryText];
-    const sf::Color SECONDARY_TEXT = Colors[SysPallete::SecondaryText];
-    const sf::Color ACCENT = Colors[SysPallete::AccentColor];
+    const sf::Color BACKGROUND = Colors[SysPalette::Background];
+    const sf::Color FOREGROUND = Colors[SysPalette::Foreground];
+    const sf::Color TOP_GRADIENT = Colors[SysPalette::TopGradient];
+    const sf::Color BOTTOM_GRADIENT = Colors[SysPalette::BottomGradient];
+    const sf::Color PRIMARY_TEXT = Colors[SysPalette::PrimaryText];
+    const sf::Color SECONDARY_TEXT = Colors[SysPalette::SecondaryText];
+    const sf::Color ACCENT = Colors[SysPalette::AccentColor];
 
-    const ImVec4 IM_BACKGROUND = ImColors[SysPallete::Background];
-    const ImVec4 IM_FOREGROUND = ImColors[SysPallete::Foreground];
-    const ImVec4 IM_TOP_GRADIENT = ImColors[SysPallete::TopGradient];
-    const ImVec4 IM_BOTTOM_GRADIENT = ImColors[SysPallete::BottomGradient];
-    const ImVec4 IM_PRIMARY_TEXT = ImColors[SysPallete::PrimaryText];
-    const ImVec4 IM_SECONDARY_TEXT = ImColors[SysPallete::SecondaryText];
-    const ImVec4 IM_ACCENT = ImColors[SysPallete::AccentColor];
+    const ImVec4 IM_BACKGROUND = ImColors[SysPalette::Background];
+    const ImVec4 IM_FOREGROUND = ImColors[SysPalette::Foreground];
+    const ImVec4 IM_TOP_GRADIENT = ImColors[SysPalette::TopGradient];
+    const ImVec4 IM_BOTTOM_GRADIENT = ImColors[SysPalette::BottomGradient];
+    const ImVec4 IM_PRIMARY_TEXT = ImColors[SysPalette::PrimaryText];
+    const ImVec4 IM_SECONDARY_TEXT = ImColors[SysPalette::SecondaryText];
+    const ImVec4 IM_ACCENT = ImColors[SysPalette::AccentColor];
 
     const unsigned int SCREEN_WIDTH = sf::VideoMode::getDesktopMode().width;
     const unsigned int SCREEN_HEIGHT = sf::VideoMode::getDesktopMode().height;
@@ -45,7 +45,7 @@ namespace RCxUI {
     }
 
     //Basic window background used by all windows - 1/3 of screen width
-    inline void DrawBackgroundTitle(sf::RenderWindow& wind, std::string title, sf::Font& font) {
+    inline void DrawBackgroundTitle(sf::RenderWindow& wind, const std::string& title, const sf::Font& font) {
         sf::RectangleShape backgroundObj(sf::Vector2f(SCREEN_WIDTH / 3, SCREEN_HEIGHT / 1.5));
         backgroundObj.setPosition(sf::Vector2f(
             (SCREEN_WIDTH / 2) - (SCREEN_WIDTH / 3) / 2,

@@ -7,10 +7,10 @@ SystemStyleHandler::SystemStyleHandler() {
 }
 
 void SystemStyleHandler::InitializeFonts() {
-	fs::path currentPath = fs::current_path();
-	fs::path fontFolderPath = currentPath / fs::path("Assets") / fs::path("Fonts");
+	const fs::path currentPath = fs::current_path();
+	const fs::path fontFolderPath = currentPath / fs::path("Assets") / fs::path("Fonts");
 
-	for (std::string s : SysFontPaths) {
+	for (std::string& s : SysFontPaths) {
 		sf::Font f;
 		fs::path fontFilePath = fontFolderPath / fs::path(s);
 		f.loadFromFile(fontFilePath.u8string());
@@ -18,10 +18,10 @@ void SystemStyleHandler::InitializeFonts() {
 	}
 }
 
-sf::Color SystemStyleHandler::Alpha(sf::Color col, float alpha) {
-	return sf::Color(col.r, col.g, col.b, alpha);
+sf::Color SystemStyleHandler::Alpha(sf::Color col, const float alpha) {
+	return { col.r, col.g, col.b, static_cast<sf::Uint8>(alpha) };
 }
 
-ImVec4 SystemStyleHandler::ImAlpha(ImVec4 col, float alpha) {
-	return ImVec4(col.x, col.y, col.z, alpha);
+ImVec4 SystemStyleHandler::ImAlpha(const ImVec4 col, const float alpha) {
+	return { col.x, col.y, col.z, alpha };
 }

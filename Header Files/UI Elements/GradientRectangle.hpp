@@ -5,14 +5,14 @@
 
 class GradientRectangle {
 public:
-	GradientRectangle(int x, int y, int width, int height);
+	GradientRectangle(const int x, const int y, const int width, const int height);
 
-	void SetColor(sf::Color c1, sf::Color c2, sf::Color c3, sf::Color c4);
+	void SetColor(const sf::Color c1, const sf::Color c2, const sf::Color c3, const sf::Color c4);
 
 	void Draw(sf::RenderWindow& wind);
 
 private:
-	sf::Vertex points[4];
+	sf::Vertex m_points[4];
 };
 
 #endif

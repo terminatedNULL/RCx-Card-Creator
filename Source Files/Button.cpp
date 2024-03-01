@@ -6,9 +6,13 @@
 
 using namespace TextTools;
 
-Button::Button(float x, float y, float width, float height, int radius, sf::String text, sf::Font& font, int size, bool radio) : m_font(font), m_state(0) {
+Button::Button(
+	const int x, const int y, const int width, const int height,
+	const int size, const int radius, const sf::String& text,
+	sf::Font& font, const bool radio
+) : m_font(font), m_state(0) {
 	m_buttonRect = RoundedRectangle(0, 0, width, height, radius, sf::Color::White);
-	m_buttonRect.move((int)x, (int)y);
+	m_buttonRect.move(x, y);
 
 	m_size = sf::Vector2f(width, height);
 	m_pos = sf::Vector2f(x, y);
@@ -23,7 +27,9 @@ Button::Button(float x, float y, float width, float height, int radius, sf::Stri
 //=============================================================================================
 // SET FUNCTIONS
 //=============================================================================================
-void Button::SetColors(sf::Color normalColor, sf::Color hoverColor, sf::Color clickColor) {
+void Button::SetColors(
+	const sf::Color normalColor, const sf::Color hoverColor, const sf::Color clickColor
+) {
 	m_buttonRect.setFillColor(normalColor);
 	m_color[0] = normalColor;
 	m_color[1] = hoverColor;
@@ -160,7 +166,7 @@ void Button::Release(sf::Event event, sf::RenderWindow& wind) {
 //=============================================================================================
 
 void Button::checkTextSize(sf::Text& text, sf::Vector2f container) {
-	if (TextSize(text.getString(), m_font, text.getCharacterSize()).x > container.x) {
+	if (textSize(text.getString(), m_font, text.getCharacterSize()).x > container.x) {
 
 	}
 }

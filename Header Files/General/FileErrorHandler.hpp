@@ -10,14 +10,14 @@ public:
 	FileErrorHandler();
 	~FileErrorHandler();
 
-	Error& CreateError(ErrorType t, ErrorLevel l, std::string msg, std::string detail);
+	static Error& CreateError(const ErrorType type, const ErrorLevel level, const std::string msg, const std::string detail);
 	void SetError(Error& e);
-	Error& GetError();
+	Error& GetError() const;
 
 private:
-	Error* currError;
+	Error* m_currError;
 
-	void handleError();
+	void handleError() const;
 };
 
 #endif

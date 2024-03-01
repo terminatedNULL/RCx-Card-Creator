@@ -80,13 +80,13 @@ public:
 	bool LoadFromFile();
 	bool WriteToFile();
 
-	void SetVersion(int maj, int min, int rev);
-	void SetReleaseDate(int d, int m, int y);
-	void SetModDate(int d, int m, int y);
-	void SetName(std::string name);
-	void SetAuthor(std::string author);
+	void SetVersion(const int maj, const int min, const int rev);
+	void SetReleaseDate(const int d, const int m, const int y);
+	void SetModDate(const int d, const int m, const int y);
+	void SetName(const std::string name);
+	void SetAuthor(const std::string author);
 
-	bool AddElement(std::string data, ElementTypes type);
+	bool AddElement(const std::string data, const ElementTypes type);
 
 	bool IsGood();
 

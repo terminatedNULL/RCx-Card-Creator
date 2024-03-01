@@ -36,7 +36,7 @@ void Textbox::SetPosition(int x, int y) {
 	m_textbox.setPosition(sf::Vector2f(x, y));
 }
 
-void Textbox::SetFont(sf::Font& font) {
+void Textbox::SetFont(const sf::Font& font) {
 	m_textbox.setFont(font);
 	m_font = font;
 }
@@ -121,52 +121,52 @@ void Textbox::Click(sf::Event event, sf::RenderWindow& wind) {
 void Textbox::input(sf::Event::KeyEvent keyIn, bool devGoto) {
 	if (devGoto) { goto SAFE_TEXT_SET; }
 	if (keyIn.code != DELETE_K && keyIn.code != ENTER && keyIn.code != ESCAPE && keyIn.code != PASTE) {
-		sf::Vector2f addCharBounds = TextSize(std::to_string(keyIn.code), m_font, m_charSize);
-		sf::Vector2f lineTextBounds = TextSize(m_text[lineNo], m_font, m_charSize);
+		const sf::Vector2f addCharBounds = textSize(std::to_string(keyIn.code), m_font, m_charSize);
+		const sf::Vector2f lineTextBounds = textSize(m_text[m_lineNo], m_font, m_charSize);
 
 		if (m_singleLine) {
 			if (lineTextBounds.x + addCharBounds.x - 10 > m_background.getSize().x + 2) {
-				if (!m_overflow.first && dotPos == 0) {
+				if (!m_overflow.first && m_dotPos == 0) {
 					m_overflow.second = true;
-					dotPos = m_text[0].length() - 1;
+					m_dotPos = m_text[0].length() - 1;
 				}
 			}
-			m_text[0] += (char)keyIn.code;
+			m_text[0] += static_cast<char>(keyIn.code);
 		}
 		else {
 			if (lineTextBounds.x + addCharBounds.x - 10 > m_background.getSize().x + 2) {
 				if (!m_overflow.first) { m_overflow.second = true; }
-				lineNo++;
-				m_text.push_back("");
-				m_text[lineNo] += (char)keyIn.code;
+				m_lineNo++;
+				m_text.emplace_back("");
+				m_text[m_lineNo] += static_cast<char>(keyIn.code);
 			}
 			else {
-				m_text[lineNo] += (char)keyIn.code;
+				m_text[m_lineNo] += static_cast<char>(keyIn.code);
 			}
 		}
 	}
-	else if (keyIn.code == DELETE_K && m_text[lineNo].length() > 0) {
+	else if (keyIn.code == DELETE_K && m_text[m_lineNo].length() > 0) {
 		if (m_singleLine) {
-			if (m_text[0].length() - 1 == dotPos) {
+			if ((m_text[0].length() - 1) == m_dotPos) {
 				m_overflow.second = false;
-				dotPos = 0;
+				m_dotPos = 0;
 			}
 			m_text[0].pop_back();
 		}
 		else {
-			if (m_text[lineNo].length() == 0) {
+			if (m_text[m_lineNo].length() == 0) {
 				m_overflow.second = false;
-				lineNo--;
+				m_lineNo--;
 				m_text.pop_back();
 			}
 			else {
-				m_text[lineNo].pop_back();
+				m_text[m_lineNo].pop_back();
 			}
 		}
 	}
 	else if (keyIn.code == ENTER && !m_singleLine) {
-		lineNo++;
-		m_text.push_back("");
+		m_lineNo++;
+		m_text.emplace_back("");
 	}
 	else if (keyIn.code == ESCAPE) {
 		SetSelected(false);
@@ -175,18 +175,18 @@ void Textbox::input(sf::Event::KeyEvent keyIn, bool devGoto) {
 	else if (keyIn.code == PASTE && m_singleLine) { //Implement multi-line pasting at some point
 	SAFE_TEXT_SET:
 		m_text.clear();
-		m_text.push_back("");
-		lineNo = 0;
-		std::string clipContents = sf::Clipboard::getString();
+		m_text.emplace_back("");
+		m_lineNo = 0;
+		const std::string clipContents = sf::Clipboard::getString();
 
-		if (TextSize(clipContents, m_font, m_charSize).x > m_background.getSize().x) {
+		if (textSize(clipContents, m_font, m_charSize).x > m_background.getSize().x) {
 			for (int i = 0; i < clipContents.length(); i++) {
-				sf::Vector2f lineTextBounds = TextSize(m_text[0], m_font, m_charSize);
-				sf::Vector2f addCharBounds = TextSize(std::to_string(clipContents[i]), m_font, m_charSize);
+				const sf::Vector2f lineTextBounds = textSize(m_text[0], m_font, m_charSize);
+				const sf::Vector2f addCharBounds = textSize(std::to_string(clipContents[i]), m_font, m_charSize);
 				if (lineTextBounds.x + addCharBounds.x - 10 > m_background.getSize().x + 2) {
-					if (!m_overflow.first && dotPos == 0) {
+					if (!m_overflow.first && m_dotPos == 0) {
 						m_overflow.second = true;
-						dotPos = m_text[0].length() - 1;
+						m_dotPos = m_text[0].length() - 1;
 					}
 				}
 				m_text[0] += clipContents[i];
@@ -201,7 +201,7 @@ void Textbox::input(sf::Event::KeyEvent keyIn, bool devGoto) {
 
 	if (m_overflow.second) {
 		if (m_singleLine) {
-			m_textbox.setString(m_text[0].substr(0, dotPos - 1) + "...");
+			m_textbox.setString(m_text[0].substr(0, m_dotPos - 1) + "...");
 		}
 		else m_textbox.setString(m_text[0].substr(0, m_text[0].length() - 2) + "...");
 		return;
@@ -210,9 +210,10 @@ void Textbox::input(sf::Event::KeyEvent keyIn, bool devGoto) {
 }
 
 std::string Textbox::AssembleString() {
-	std::string assembledString = "";
-	for (auto s : m_text)
-		assembledString.append(s + '\n');
+	std::string assembledString;
+
+	for (auto& s : m_text) { assembledString.append(s + '\n'); }
 	assembledString.pop_back();
+
 	return assembledString;
 }

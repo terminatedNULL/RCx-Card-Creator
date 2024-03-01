@@ -7,7 +7,7 @@
 
 class Interactable {
 public:
-	bool BoundsCheck(sf::Vector2f pos, sf::Vector2f size, sf::RenderWindow& wind);
+	static bool BoundsCheck(const sf::Vector2f pos, const sf::Vector2f size, const sf::RenderWindow& wind);
 };
 
 #endif

@@ -36,10 +36,10 @@ namespace FileHandler {
 		std::string message = ErrorMessages[ErrorType::NoError];
 	};
 
-	std::vector<std::string> OpenFileFromPath(std::string dirPath);
-	std::vector<std::string> FileContentsToVector(std::string fileContents);
-	std::vector<std::string> FilesInDirectory(std::string dirPath, std::string filter);
-	std::vector<std::string> SetFilter(std::vector<std::string> inFiles, std::string fileExt);
+	std::vector<std::string> OpenFileFromPath(const std::string dirPath);
+	std::vector<std::string> FileContentsToVector(const std::string fileContents);
+	std::vector<std::string> FilesInDirectory(const std::string dirPath, const std::string filter);
+	std::vector<std::string> SetFilter(const std::vector<std::string> inFiles, const std::string fileExt);
 }
 
 #endif
